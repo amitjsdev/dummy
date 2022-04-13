@@ -13,18 +13,14 @@ export default function HeaderAuthMenu() {
     i18n.changeLanguage(languageValue);
   }
   useEffect(()=>{
-
     if(!!currentLanguage){
       i18n.changeLanguage(currentLanguage);
     }
-
   },[])
 
   return (
     <>
     <div>
-   
-
       <h1>Auth</h1>
       <select className="custom-select" style={{width: 200,float:"right"}} onChange={changeLanguageHandler}>
         <option selected={currentLanguage=="en"} value="en" >English</option>
@@ -40,7 +36,6 @@ export default function HeaderAuthMenu() {
         <Link to="/auth/about">About</Link> |{" "}
         <Link to="/auth/contact">Contact</Link> |{" "}
         <Link to="/auth/user">Users</Link>
-
       </nav>
       <Outlet />
     </div>
