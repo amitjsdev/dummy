@@ -8,24 +8,18 @@ import {
 
 // import Home from "../pages/Home";
 import HeaderMenu from "./pages/HeaderMenu";
-
-import NoGuard from "./routes/Guards/NoGuards";
 import AuthGuards from "./routes/Guards/AuthGuards";
-
-
 import { createBrowserHistory } from "history";
 import HeaderAuthMenu from "./pages/HeaderAuthMenu";
 
+const Home = React.lazy(() => import("./pages/Home"));
 const history = createBrowserHistory();
 const About = React.lazy(() => import("./pages/PrivatePages/UseCallBackAbout.js"));
 const UsersComponent = React.lazy(() => import("./pages/PrivatePages/UsersComponent"));
-
 const Contact = React.lazy(() => import("./pages/PrivatePages/UseMemo.js"));
-
 const AboutPublic = React.lazy(() => import("./pages/PrivatePages/UseCallBackAbout.js"));
 const ContactPublic = React.lazy(() => import("./pages/PrivatePages/UseMemo.js"));
 
-const Home = React.lazy(() => import("./pages/Home"));
 
 
 class Routers extends Component {
@@ -42,7 +36,7 @@ class Routers extends Component {
               </Route> */}
 
               <Route path="/auth" element={<AuthGuards />}>
-              {/* <Route path="/auth/home" element={<Home/>} /> */}
+              <Route path="/auth/home" element={<Home/>} />
                 <Route path="/auth/about" element={<AboutPublic />} />
                 <Route path="/auth/contact" element={<ContactPublic />} />
                 <Route path="/auth/user" element={<UsersComponent />} /> 

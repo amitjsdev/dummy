@@ -1,4 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+
+
 import { getUsers } from "../../redux/actions/users";
 import { useSelector, useDispatch } from "react-redux";
 
@@ -7,6 +10,8 @@ import UserList from "./UserList";
 import UserData from "./UserData";
 
 const UseCallBackAbout = (props) => {
+  const { t, i18n } = useTranslation();
+
   const dispatch = useDispatch();
 
   const [showRecord, setShowRecord] = useState(false);
@@ -30,7 +35,7 @@ const UseCallBackAbout = (props) => {
 
   return (
     <div>
-      <h2>This is about us page!</h2>
+      <h2>{t('aboutPage')}</h2>
       Read more about us at :
       <div>
         <button onClick={getUserList}>Display Records</button>
