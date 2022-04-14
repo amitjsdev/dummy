@@ -17,8 +17,8 @@ const history = createBrowserHistory();
 const About = React.lazy(() => import("./pages/PrivatePages/UseCallBackAbout.js"));
 const UsersComponent = React.lazy(() => import("./pages/PrivatePages/UsersComponent"));
 const Contact = React.lazy(() => import("./pages/PrivatePages/UseMemo.js"));
-const AboutPublic = React.lazy(() => import("./pages/PrivatePages/UseCallBackAbout.js"));
-const ContactPublic = React.lazy(() => import("./pages/PrivatePages/UseMemo.js"));
+const AboutPrivate = React.lazy(() => import("./pages/PrivatePages/UseCallBackAbout.js"));
+const ContactPrivate = React.lazy(() => import("./pages/PrivatePages/UseMemo.js"));
 
 
 
@@ -37,8 +37,8 @@ class Routers extends Component {
 
               <Route path="/auth" element={<AuthGuards />}>
               <Route path="/auth/home" element={<Home/>} />
-                <Route path="/auth/about" element={<AboutPublic />} />
-                <Route path="/auth/contact" element={<ContactPublic />} />
+                <Route path="/auth/about" element={<AboutPrivate />} />
+                <Route path="/auth/contact" element={<ContactPrivate />} />
                 <Route path="/auth/user" element={<UsersComponent />} /> 
               </Route>
             </Routes>
